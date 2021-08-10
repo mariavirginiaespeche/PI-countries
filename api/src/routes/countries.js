@@ -1,9 +1,12 @@
 //const express=require("express");
 //const countriesM =require("../models/Country");
 const{ Router }=require("express");
-const { Country, Activity } = require('../db.js')
+const { Country, Activity } = require('../db.js');
+const {Op}= require("sequelize");
 
-const router = Router();
+const router = Router(); 
+
+
 
 
 
@@ -53,7 +56,7 @@ router.get('/', async (req, res, next) => {
         console.log(countries);
         res.json(countries)
     } catch (error) {
-        res.json({msg: 'No se encuentra los paises en la base de datos'})
+        res.json({msg: 'No se encuentran los paises en la base de datos'})
     }
 })
 
@@ -73,6 +76,5 @@ router.get('/countries', async(req,res, next)=>{
     }
 } 
 });
-
 
 module.exports = router;

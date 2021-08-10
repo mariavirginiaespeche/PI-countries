@@ -1,15 +1,18 @@
 import './App.css';
 import React from "react";
-import { Route } from "react-router-dom";
-import Landing from "../src/component/Landing";
+import { Route, BrowserRouter } from "react-router-dom";
+import LandingPage from "./component/LandingPage";
+import Home from './component/Home';
 
 function App() {
   return (
-    <React.Fragment>
+  <BrowserRouter>
     <div className="App">
-      <Route exact path="/" component={Landing} />
+      <Route exact path="/" component={LandingPage} />
+      <Route path="/home" component={Home}/>
     </div>
-    </React.Fragment>
+  </BrowserRouter>
+   
   );
 }
 
