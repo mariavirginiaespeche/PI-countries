@@ -44,6 +44,17 @@ try{
 }
 });
 
+router.get("/", async (req, res, next) => {
+    try {
+        const activities = await Activity.findAll({
+            include: Country
+        });
+        return res.json(activities)
+    } catch (err) {
+        return next(err);
+    }
+})
+
 
 
 

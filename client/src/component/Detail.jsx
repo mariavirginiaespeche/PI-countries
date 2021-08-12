@@ -28,6 +28,24 @@ export default function Detail(){
                         <h4>POBLACION:{countriesDetail?.population}</h4>
                     </div> 
 
+                    <div>
+                        <h1>ACTIVIDADES</h1>
+                        
+
+                        {countriesDetail?.activities?.length ?
+                    countriesDetail?.activities.map(a=>{
+                        return (<div key={a.id} >
+                            <p>{a.name}</p>
+                            <p>Difficulty: {a.dificulty}</p>
+                            <p>Duration: {a.duration} mins</p>
+                            <p>Season: {a.season}</p>
+                        </div>   )
+                    } ):
+                        <p> NO HAY ACTIVIDADES PARA ESTE PAIS</p>
+                    }
+
+                    </div>
+
                 
                 
                 <Link to= "/home">
