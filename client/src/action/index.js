@@ -1,6 +1,7 @@
 import axios from "axios";
 
 
+
 //me trae todos los paises en la home
 export function getCountries(){
     return async function(dispatch){
@@ -56,34 +57,54 @@ export function orderByPopulation(payload){
     }
 }
 
-export function getNameCountries(payload)
 
-export function datailCountries(payload){ //payload es el id
-    //'/countries/:idPais'
+
+
+
+export function getNameCountries(name){
+
     return async function(dispatch){
-        try{
 
-        var json= await axios.post(`http://localhost:3001/countries/${payload}`);
+        var json= await axios.get("http://localhost:3001/countries?name=" + name);
 
         return dispatch({
-            type: "DETAIL_COUNTRIES",
+            type: "GET_NAME_COUNTRIES",
             payload: json.data,
-        } );
-    }catch(error){
-        console.log(error)
-    }
+        });
+
 }
 }
 
-// export function addCountries(payload){
 
+export function datailCountries(payload){
+
+    return async function(dispatch){
+
+        var json= await axios.get(`http://localhost:3001/countries/${payload}`);
+
+        return dispatch({
+            type:"DETAIL_COUNTRIES",
+            payload: json.data,
+        });
+
+}
+}
+
+
+
+// export function datailCountries(payload){ //payload es el id
+//     //'/countries/:idPais'
+//     return async function(dispatch){
+//         // try{
+
+//         var json= await axios.get(`http://localhost:3001/countries/${payload}`);
+
+//         return dispatch({
+//             type: "DETAIL_COUNTRIES",
+//             payload: json.data,
+//         } );
+//     // }catch(error){
+//     //     console.log(error)
+//     // }
 // }
-
-// export function sortBy (payload){
-
-// }
-
-// export function createActivity(){
-
-
 // }

@@ -10,23 +10,34 @@ const router = Router();
 router.post('/',async(req,res,next)=>{
     //agregarle toUpperCase
 try{
-    const{name,dificulty,duration,season,idCountry}=req.body;
-    let [postActivity] = await Activity.findOrCreate({
+    const{name,dificulty,duration,season,countryId}=req.body;
+    let postActivity = await Activity.findOrCreate({
         where: {
             name: name,
             dificulty: dificulty,
             duration: duration,
             season: season
         },
-        default:{
-            name: name,
-            dificulty: dificulty,
-            duration: duration,
-            season: season
-        }
+        // default:{
+        //     name: name,
+        //     dificulty: dificulty,
+        //     duration: duration,
+        //     season: season
+        // }
     });
-    await postActivity.setCountries(idCountry);
-    res.json(postActivity)
+    console.log("COUNTRII", countryId)
+         for(let i=0; i<countryId.length; i++){
+                 const match = await Country.findOne({
+                     where:{
+                         name: countryId[i]
+                     }
+                 })
+
+                 await postActivity[0].addCountry(match);
+                 console.log("MATCHHHHHH", match)
+             }
+              //await postActivity.setCountries(countryId);
+             res.json(postActivity)
 
 }catch(error){
     next(error)

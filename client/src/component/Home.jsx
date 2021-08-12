@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, filterCountriesByContinent, orderByName, orderByPopulation } from "../action/index";
+import { getCountries, filterCountriesByContinent, orderByName, orderByPopulation, getNameCountries } from "../action/index";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
+import SearchBar from "./SearchBar";
 
 export default function Home(){
     const dispach= useDispatch()
@@ -16,6 +17,10 @@ export default function Home(){
     const currentCountries = allCountries.slice(indexOfFisrtCountries, indexOfLastCountries)
     const [order, setOrder]= useState("")
     const [orderPopulation, setOrderPopulation]= useState("")
+
+
+    
+
 
     const paginado= (pageNumber)=>{
         setCurrentPage(pageNumber)
@@ -45,6 +50,8 @@ export default function Home(){
         setOrderPopulation(`Ordenado ${e.target.value}`)
 
     }
+
+    
 
 
     return(
@@ -78,17 +85,19 @@ export default function Home(){
                     
                 </select>
                 <Paginado countriesPerPage={countriesPerPage} allCountries= {allCountries.length} paginado= {paginado} />
-
+                <SearchBar/>
+                
+                
             {
                 
                 
                 currentCountries && currentCountries.map(el=>{
                     return( 
-                        <fragment>
+                        <div>
                             <Link to={"/home/"+ el.id}>
-                            <Card name={el.name} region={el.region} flag={el.flag} key={el.id}/>
+                            <Card key={el.id} country={el}/>
                             </Link>
-                        </fragment>
+                        </div>
                     );
                 })  
             }
