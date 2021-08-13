@@ -1,0 +1,16 @@
+.fondoform{
+    background-image: url("https://www.entornoturistico.com/wp-content/uploads/2016/03/turismo.jpg");
+
+    background-attachment: fixed;
+
+    background-position-y: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    transition: opacity 0.3s linear 0s;
+    width: 100%;
+}
+

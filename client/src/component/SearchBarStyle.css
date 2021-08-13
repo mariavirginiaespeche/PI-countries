@@ -1,0 +1,25 @@
+.inputbusqueda{
+    border-radius: 10px;
+    border-color:gray;
+    size: 200px;
+    font-size: 13px;
+    height: 34px;
+    font-size: 16px;
+    
+
+    
+}
+
+.buttonbusqueda{
+    margin: 2em auto;
+    display: inline-block;
+  -webkit-appearance: none;
+  border: 3px solid grey;
+  border-radius: 10px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-clip: padding-box;
+  position: relative;
+  color: #525a69;
+}

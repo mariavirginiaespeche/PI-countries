@@ -31,6 +31,9 @@ export function getCountries(){
      }
  }
 
+
+
+
  export function createActivity(payload){
     return async function(dispatch){
 
@@ -88,6 +91,18 @@ export function datailCountries(payload){
         });
 
 }
+}
+
+export function getAllActivities(){
+    return function(dispatch){
+        return axios.get('http://localhost:3001/activity')
+        .then(getActivities=>{
+            return dispatch({
+                type: "GET_ALL_ACTIVITIES",
+                payload: getActivities.data
+            })
+        })
+    }
 }
 
 

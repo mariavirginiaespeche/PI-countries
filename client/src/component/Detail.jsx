@@ -3,6 +3,7 @@ import {Link, useParams} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { datailCountries } from "../action/index";
 import { useEffect } from "react";
+import './DetailStyle.css'
 
 export default function Detail(){
     const {id}= useParams();
@@ -14,7 +15,7 @@ export default function Detail(){
     },[])
 
         return(
-            <div>
+            <div className="detailbackground">
                 
                    
                     <div>

@@ -1,0 +1,77 @@
+.landing-page{
+background-image: url("https://wallpaperaccess.com/full/766612.jpg");
+  
+
+
+background-attachment: fixed;
+
+    background-position-y: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    transition: opacity 0.3s linear 0s;
+    width: 100%;
+}
+.titlelanding{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    font-size: 100px;
+    font-style: normal;
+    line-height: 120%;
+    display: block;
+    background-color: azure;
+    opacity: 0.8;
+    
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    
+
+    padding: 150px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.buttonlanding{
+    /* background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+
+    background-color: lightslategrey;
+    /* width: 25px; */
+    /* border-radius: 10px;
+    margin: 5px;
+    align-self: flex-end;
+    color: black; */ 
+
+    margin: 2em auto;
+  display: block;
+  -webkit-appearance: none;
+  border: 6px solid rgba(255,255,255,0.45);
+  border-radius: 50px;
+  padding: 1em 3em;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-clip: padding-box;
+  position: relative;
+  color:black;
+
+
+
+}

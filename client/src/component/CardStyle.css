@@ -1,0 +1,27 @@
+.card{
+    padding: 15px 10px;
+    text-align: center;
+    text-transform: uppercase;
+
+    margin: 10px;
+    width: 350px;
+    height: 350px;
+    background-color:whitesmoke;
+    border-radius: 20px;
+    position: relative;
+    border: 2px solid grey;
+}
+
+
+.imgstyle{
+    width: 250px;
+    height: 210px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.h3style{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}

@@ -3,7 +3,8 @@ const initialState = {
     countries: [],
     allCountries: [],
     allActivity: [],
-    countriesDetail:{}
+    countriesDetail:{},
+    activityFilter: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -103,6 +104,36 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 countriesDetail: action.payload
             }
+        
+
+         case "FILTER_ACTIVITY":{
+              const allActivity= state.allActivity
+              const countriesAll= state.allCountries // [{act:[]}{}]
+              //const filterActivity= countriesAll.forEach(c=>c.activities)//[[{}{}][]]
+             // const countiesActivity= filterActivity.filter(e=>e===e.name)
+             // console.log()
+             // return {
+             //     ...state,
+             //     countries: countiesActivity
+             //    }
+             // }
+
+             //const filterActivity= countriesAll.filter(c => (c.activities.some(a => a.name === action.payload)) //devuelve lso paises que tengan la actividad
+            //)
+
+            const activity= allActivity.filter(a=>a.name===action.payload)[0].countries.map(countryWithActivity => countryWithActivity)
+            return {
+                     ...state,
+                     countries: activity
+                    }
+                 }
+
+            case "GET_ALL_ACTIVITIES":{
+                return{
+                    ...state,
+                    allActivity: action.payload
+                }
+            }
 
         default:
             return state;
@@ -111,4 +142,8 @@ function rootReducer(state = initialState, action) {
 
 }
 
+
+
 export default rootReducer;
+
+

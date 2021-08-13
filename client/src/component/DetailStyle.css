@@ -1,0 +1,17 @@
+.detailbackground{
+    background-image: url("https://wallpaperaccess.com/full/766612.jpg");
+      
+    
+    
+    background-attachment: fixed;
+    
+        background-position-y: 0%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        opacity: 1;
+        position: absolute;
+        top: 0px;
+        transition: opacity 0.3s linear 0s;
+        width: 100%;
+    }

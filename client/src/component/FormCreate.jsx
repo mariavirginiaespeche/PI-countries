@@ -4,21 +4,39 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createActivity, getCountries } from '../action';
 import axios from 'axios';
 
-// function validate(input){
-//     let errors = {};
-//     if(!input.name){
-//         errors.name = "se requiere Nombre";
-//     }else if(!input.nickname){
-//         errors.nickName = "se requiere nickname"
-//     }
-//     //si en el input hay un numero >10 y <0 enviar error
-//     return errors
-// }
+import './FormStyle.css'
+
+function validate(input, countryId){
+    let errors = {};
+    if(!input.name){
+        errors.name = "se requiere Nombre";
+    }else if(!input.dificulty){
+        errors.dificulty = "se requiere dificultad"
+    }else if(input.dificulty>5 || input.dificulty< 1){
+        errors.dificulty = "se requiere dificultad hasta 5"
+    
+    }else if(!input.duration){
+        errors.duration = "se requiere duration"
+    //si en el input hay un numero >10 y <0 enviar error
+    }else if (input.duration>24){
+        errors.duration = "agregar duracion manos de 24 hs"
+    
+    }else if(!input.season){
+        errors.season = "se requiere season"
+    //si en el input hay un numero >10 y <0 enviar error
+   
+    }else if(!countryId.length){
+        errors.countryId = "se requiere country"
+    //si en el input hay un numero >10 y <0 enviar error
+    
+    }return errors;
+}
 
 export default function ActivityCreate(){
     const dispatch= useDispatch()
     const countries= useSelector((state)=>state.allCountries)//?????
     const [countryId, setCountryId]= useState([])
+    const [errors, setErrors]= useState({})
     const [input, setInput]= useState({
         name: "",
         dificulty:"",
@@ -32,7 +50,7 @@ export default function ActivityCreate(){
     },[])
 
     function handleChange(e){
-        if(e.target.name==="countries"){
+        if(e.target.name==="countryId"){
             setCountryId([...countryId, e.target.value])
         }else{
 
@@ -41,6 +59,10 @@ export default function ActivityCreate(){
             [e.target.name] : e.target.value
         })
         }
+        setErrors(validate({ //luego seteo el estado de errores, pasandole el estado setetado
+            ...input,
+            [e.target.name] : e.target.value
+        }, countryId))
     }
 
     // function handleCheck(e){
@@ -66,7 +88,8 @@ export default function ActivityCreate(){
             ...input,
             countryId: countryId
         }
-        var json= await axios.post("http://localhost:3001/activity", obj);
+        if(Object.keys(errors).length === 0){
+            var json= await axios.post("http://localhost:3001/activity", obj);
         // dispatch(createActivity(input))
         alert("actividad creada")
         setInput({
@@ -76,6 +99,11 @@ export default function ActivityCreate(){
             season:"", 
         })
         setCountryId([])
+        }
+        else if(Object.keys(errors).length > 0){ 
+
+            alert("Debes completar todos los campos requeridos para agregar la Actividad")
+         }
     }
 
 
@@ -84,19 +112,24 @@ export default function ActivityCreate(){
 
 
 return(
-    <div>
+    <div className="fondoform">
 
         <Link to="/home"><button>Volver</button></Link>
         <h1>Crear tu actividad</h1>
-        <form onSubmit={(e)=>handleSubmit(e)}>
+        <form className="form" onSubmit={(e)=>handleSubmit(e)}>
             <div>
                 <label>Nombre:</label>
                 <input
                  type="text"
-                 value={input.nombre}
+                 value={input.name}
                  name="name"
                  onChange={(e)=>handleChange(e)}
                 />
+                {/* Debajo de cada input prgeunto si hay algo en error.nombredelinput y si hay algo lo renderizo .TMB ES NECESARIO HACER LA VALIDACION EN EL BACK*/}
+                {errors.name && (
+                        <p>{errors.name}</p>
+                    )}
+                    
 
             </div>
 
@@ -104,10 +137,13 @@ return(
                 <label>Dificultad:</label>
                 <input
                  type="number"
-                 value={input.dificultad}
+                 value={input.dificulty}
                  name="dificulty"
                  onChange={(e)=>handleChange(e)}
                 />
+                {errors.dificulty && (
+                        <p>{errors.dificulty}</p>
+                    )}
                 
             </div>
 
@@ -115,13 +151,17 @@ return(
                 <label>Duracion:</label>
                 <input
                  type="text"
-                 value={input.duracion}
+                 value={input.duration}
                  name="duration"
                  onChange={(e)=>handleChange(e)}
                 />
+                {errors.duration && (
+                        <p>{errors.duration}</p>
+                    )}
                 
             </div>
-
+            <div>
+            <label>Temporada:</label>
             <select name="season" value={input.season} onChange={(e)=>handleChange(e)}>
 
             <option value="summer" >Summer</option>
@@ -129,44 +169,27 @@ return(
             <option value="spring" >Spring</option>
             <option value="autumn" >Autumn</option>
 
-                {/* <label>Temporada:</label>
-                <label><input
-                 type="checkbox"
-                 value="summer"
-                 name="summer"
-                 onChange={(e)=>handleCheck(e)}
-                />Summer</label>
-
-                <label><input
-                 type="checkbox"
-                 value="Winter"
-                 name="Winter"
-                 onChange={(e)=>handleCheck(e)}
-                />Winter</label>
-
-                <label><input
-                 type="checkbox"
-                 value="spring"
-                 name="spring"
-                 onChange={(e)=>handleCheck(e)}
-                />Spring</label>
-
-                <label><input
-                 type="checkbox"
-                 value="autumn"
-                 name="autumn"
-                 onChange={(e)=>handleCheck(e)}
-                />Autumn</label> */}
-                
+                                
             </select>
+            {errors.season && (
+                        <p>{errors.season}</p>
+                    )}
 
-            <select name="countries" value={countryId} onChange={(e)=>handleChange(e)}>
+            </div>
+
+            <div>
+            <label>Pais:</label>
+            <select name="countryId" value={countryId} onChange={(e)=>handleChange(e)}>
                 
                     {countries.map((c)=>(
                         <option key={c.name} value={c.name}>{c.name} </option>
                     ))}
                 
             </select>
+            {errors.countryId && (
+                        <p>{errors.countryId}</p>
+                    )}
+            </div>
 
             {/* <ul><li>{input.countriesId.map(el=>el + " ,")}</li></ul> */}
             <button type="submit">Agregar actividad</button>

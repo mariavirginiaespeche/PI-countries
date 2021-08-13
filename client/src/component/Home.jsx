@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, filterCountriesByContinent, orderByName, orderByPopulation, getNameCountries } from "../action/index";
+import { getCountries, filterCountriesByContinent, orderByName, orderByPopulation, getNameCountries, filterByActivity, getAllActivities } from "../action/index";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
+
+import './HomeStyle.css'
 
 export default function Home(){
     const dispach= useDispatch()
@@ -17,23 +19,35 @@ export default function Home(){
     const currentCountries = allCountries.slice(indexOfFisrtCountries, indexOfLastCountries)
     const [order, setOrder]= useState("")
     const [orderPopulation, setOrderPopulation]= useState("")
+    const allActivities= useSelector(state=>state.allActivity)
+    console.log("holaaaaaa", allActivities)
 
+   
 
+ 
     
 
 
     const paginado= (pageNumber)=>{
         setCurrentPage(pageNumber)
     }
+    
 
     useEffect(()=>{
         dispach(getCountries());
+        dispach(getAllActivities())
 
     },[])
 
     function handleFilterContinent(e){
         dispach(filterCountriesByContinent(e.target.value)) //payload que toma como valor el value de option
     }
+
+    function handleFilterActivity(e){
+        dispach(filterByActivity(e.target.value))
+        console.log(dispach(filterByActivity(e.target.value)))
+    }
+    
 
     function handleNameSort(e){
         e.preventDefault();
@@ -51,13 +65,14 @@ export default function Home(){
 
     }
 
+
     
 
 
     return(
-        <div>
+        <div className="home">
             <div>
-                <Link to= "/activity">Agregar Actividades</Link>
+                <Link to= "/activity"><button>Agregar actividades</button></Link>
                 <h1>COUNTRIES</h1>
             </div>
             <div>
@@ -72,6 +87,7 @@ export default function Home(){
                     <option value= "asc">Ascendente</option>
                     <option value= "desc">Descendente</option>
                 </select>
+            <span>Filtra por pais</span>
                 <select onChange={e=>handleFilterContinent(e)}>
                     <option value="Americas">America</option>
                     <option value="Europe">Europa</option>
@@ -80,8 +96,16 @@ export default function Home(){
                     <option value="Oceania">Oceania</option>
                     <option value="Polar">Polar</option>
                 </select>
-                <select>
-                    
+            <span>Filtra por actividad</span>
+                <select onChange={e=>handleFilterActivity(e)}>
+                {allActivities?.length &&
+                    allActivities.map(a=>{return(
+                        <option key={a.id} value={a.name}>{a.name}</option>
+                    )})
+
+                    }  
+               
+   
                     
                 </select>
                 <Paginado countriesPerPage={countriesPerPage} allCountries= {allCountries.length} paginado= {paginado} />
@@ -93,7 +117,7 @@ export default function Home(){
                 
                 currentCountries && currentCountries.map(el=>{
                     return( 
-                        <div>
+                        <div className="cardhome">
                             <Link to={"/home/"+ el.id}>
                             <Card key={el.id} country={el}/>
                             </Link>

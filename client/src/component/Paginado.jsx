@@ -1,4 +1,5 @@
 import React from "react";
+import './PaginadoStyle.css'
 
 
 export default function Paginado({countriesPerPage, allCountries, paginado}){
@@ -13,11 +14,11 @@ export default function Paginado({countriesPerPage, allCountries, paginado}){
                 <ul>
                     { pageNumbers &&
                       pageNumbers.map(number=>(
-                          <li>
-                          <a onClick={()=>paginado(number)}>
+                          <span>
+                          <button className="buttonpage" onClick={()=>paginado(number)}> 
                              {number} 
-                          </a>
-                          </li>
+                             </button>
+                          </span>
                       ) )}
                 </ul>
             </nav>

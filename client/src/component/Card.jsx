@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './CardStyle.css'
 
 export default function({country}){
     return(
-        <div>
-            <h3>{country.name}</h3>
+        <div className="card">
+            <h3 className="h3style">{country.name}</h3>
             <h5>{country.region}</h5>
-            <img src={country.flag} alt="img not found"/>
+            <img className="imgstyle" src={country.flag} alt="img not found"/>
             <Link to= {`/countries/${country.id}`}><button>Detail</button></Link>
         </div>
     )
