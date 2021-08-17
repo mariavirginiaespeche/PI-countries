@@ -8,6 +8,7 @@ import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
 
 import './HomeStyle.css'
+import "./LandingPageStyle.css"
 
 export default function Home(){
     const dispach= useDispatch()
@@ -71,24 +72,23 @@ export default function Home(){
 
     return(
         <div className="home">
+            
             <div>
-                <Link to= "/activity"><button>Agregar actividades</button></Link>
-                <h1>COUNTRIES</h1>
-            </div>
-            <div>
-            <span>Ordenar alfabeticamente</span>
-                <select onChange={e=>handleNameSort(e)}>
+            <div className="divfilter">
+            <h1 className="h1">COUNTRIES</h1>
+            <span className="spanfilter">Ordenar alfabeticamente</span>
+                <select className="selectfilter" onChange={e=>handleNameSort(e)}>
                     
                     <option value= "asc">Ascendente</option>
                     <option value= "desc">Descendente</option>
                 </select>
-            <span>Ordenar por poblacion</span>  
-                <select onChange={e=>handlePopulationSort(e)}> 
+            <span className="spanfilter">Ordenar por poblacion</span>  
+                <select className="selectfilter" onChange={e=>handlePopulationSort(e)}> 
                     <option value= "asc">Ascendente</option>
                     <option value= "desc">Descendente</option>
                 </select>
-            <span>Filtra por pais</span>
-                <select onChange={e=>handleFilterContinent(e)}>
+            <span className="spanfilter">Filtra por pais</span>
+                <select className="selectfilter" onChange={e=>handleFilterContinent(e)}>
                     <option value="Americas">America</option>
                     <option value="Europe">Europa</option>
                     <option value="Asia">Asia</option>
@@ -96,8 +96,8 @@ export default function Home(){
                     <option value="Oceania">Oceania</option>
                     <option value="Polar">Polar</option>
                 </select>
-            <span>Filtra por actividad</span>
-                <select onChange={e=>handleFilterActivity(e)}>
+            <span className="spanfilter">Filtra por actividad</span>
+                <select className="selectfilter" onChange={e=>handleFilterActivity(e)}>
                 {allActivities?.length &&
                     allActivities.map(a=>{return(
                         <option key={a.id} value={a.name}>{a.name}</option>
@@ -108,11 +108,15 @@ export default function Home(){
    
                     
                 </select>
-                <Paginado countriesPerPage={countriesPerPage} allCountries= {allCountries.length} paginado= {paginado} />
+                
                 <SearchBar/>
+                <Link to= "/activity"><button className="buttoncrearact">Agregar actividades</button></Link>
+
+                </div>
                 
                 
             {
+
                 
                 
                 currentCountries && currentCountries.map(el=>{
@@ -125,7 +129,9 @@ export default function Home(){
                     );
                 })  
             }
-
+<div className="divpaginado">
+<Paginado countriesPerPage={countriesPerPage} allCountries= {allCountries.length} paginado= {paginado} />
+</div>           
             </div>
 
 

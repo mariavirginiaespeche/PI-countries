@@ -10,7 +10,8 @@ export default function SearchBar(){
     //const countries= useSelector(state=>state.countries)
 
     function handleInputChange(e){
-        setName(e.target.value)    
+        setName(e.target.value)
+          
     }
     
     function handleSubmit(e){
@@ -19,6 +20,7 @@ export default function SearchBar(){
         dispatch(getNameCountries(name))
         console.log("click2")
         console.log(name, "name")
+        setName("")
         
     }
 
@@ -27,6 +29,7 @@ export default function SearchBar(){
             <input  className="inputbusqueda"
             type= "text"
             placeholder= "Buscar..."
+            value= {name}
             onChange= {(e)=> handleInputChange(e)}
             />
             <button className="buttonbusqueda" type="submit" onClick={(e)=> handleSubmit(e)}>Buscar</button>

@@ -18,40 +18,42 @@ export default function Detail(){
             <div className="detailbackground">
                 
                    
-                    <div>
+                    <div className="card-detail">
                         <h1>{countriesDetail?.name}</h1>
-                        <h4>ID:{countriesDetail?.id}</h4>  
-                        <h4>CONTINENTE:{countriesDetail?.region}</h4>
-                        <img src={countriesDetail?.flag} alt="img not found"/>
-                        <h4>SUBREGION:{countriesDetail?.subregion}</h4>
-                        <h4>AREA:{countriesDetail?.area}</h4>
-                        <h4>CAPITAL:{countriesDetail?.capital}</h4>
-                        <h4>POBLACION:{countriesDetail?.population}</h4>
-                    </div> 
+                        <h5>ID:{countriesDetail?.id}</h5>  
+                        <h5>CONTINENTE:{countriesDetail?.region}</h5>
+                        <img className="imgdetailstyle" src={countriesDetail?.flag} alt="img not found"/>
+                        <h5>SUBREGION:{countriesDetail?.subregion}</h5>
+                        <h5>AREA:{countriesDetail?.area}</h5>
+                        <h5>CAPITAL:{countriesDetail?.capital}</h5>
+                        <h5>POBLACION:{countriesDetail?.population}</h5>
+                    {/* </div> 
 
-                    <div>
-                        <h1>ACTIVIDADES</h1>
+                    <div> */}
+                        <h5>ACTIVIDADES</h5>
                         
 
                         {countriesDetail?.activities?.length ?
                     countriesDetail?.activities.map(a=>{
                         return (<div key={a.id} >
-                            <p>{a.name}</p>
-                            <p>Difficulty: {a.dificulty}</p>
-                            <p>Duration: {a.duration} mins</p>
-                            <p>Season: {a.season}</p>
+                            <h5>{a.name}</h5>
+                            <h5>Difficulty: {a.dificulty}</h5>
+                            <h5>Duration: {a.duration} mins</h5>
+                            <h5>Season: {a.season}</h5>
                         </div>   )
                     } ):
-                        <p> NO HAY ACTIVIDADES PARA ESTE PAIS</p>
+                        <h5> NO HAY ACTIVIDADES PARA ESTE PAIS</h5>
                     }
+
+                <Link to= "/home">
+                    <button>Volver</button>
+                </Link>
 
                     </div>
 
                 
                 
-                <Link to= "/home">
-                    <button>Volver</button>
-                </Link>
+                
 
             </div>
         )

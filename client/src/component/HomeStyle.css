@@ -5,7 +5,7 @@
 }
 
 .home{
-    background-image: url("https://media.istockphoto.com/photos/national-flags-of-countries-member-of-aec-asean-economic-community-picture-id502301813?k=6&m=502301813&s=612x612&w=0&h=wFbueEdK57x_YSlSkK85HDHhMOHUmrXD-Z4MYdxOAZY=");
+    background-image: url("https://wallpaperaccess.com/full/766612.jpg");
     background-attachment: fixed;
 
     background-position-y: 0%;
@@ -17,4 +17,43 @@
     top: 0px;
     transition: opacity 0.3s linear 0s;
     width: 100%;
+
+    
+}
+.h1{
+    padding: 30px;
+    margin: 15px;
+    font-size: 60px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+}
+
+.divfilter{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    font-size: 20px;
+    font-style: normal;
+    line-height: 120%;
+    display: block;
+    background-color:azure;
+    opacity: 0.9;
+    
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    
+
+    padding: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.selectfilter{
+    margin: 5px;
+}
+
+.spanfilter{
+    margin: 10px;
 }

@@ -14,3 +14,51 @@
     width: 100%;
 }
 
+.divform{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    font-size: 20px;
+    font-style: normal;
+    line-height: 120%;
+    display: block;
+    background-color: azure;
+    opacity: 0.8;
+    
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    
+
+    padding: 100px;
+    text-align: center;
+    text-transform: uppercase;
+
+
+    /* background-color: whitesmoke;
+    
+
+    padding: 15px 10px;
+
+    margin: 10px;
+    
+    
+    height: 350px;
+    
+
+    align-content: center;
+
+    transition: opacity 1 linear 0s; */
+
+    
+}
+
+.h1{
+    padding: 30px;
+}
+
+.div{
+    padding: 15px;
+}
+

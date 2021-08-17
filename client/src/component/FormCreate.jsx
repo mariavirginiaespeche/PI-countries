@@ -114,10 +114,25 @@ export default function ActivityCreate(){
 return(
     <div className="fondoform">
 
-        <Link to="/home"><button>Volver</button></Link>
-        <h1>Crear tu actividad</h1>
+        <Link to="/home"><button className="buttonlanding">Volver</button></Link>
+        <div className="divform">
+        <h1 className="h1">Crear tu actividad</h1>
         <form className="form" onSubmit={(e)=>handleSubmit(e)}>
-            <div>
+
+        <div className="div">
+            <label>Pais:</label>
+            <select name="countryId" value={countryId} onChange={(e)=>handleChange(e)}>
+                
+                    {countries.map((c)=>(
+                        <option key={c.name} value={c.name}>{c.name} </option>
+                    ))}
+                
+            </select>
+            {errors.countryId && (
+                        <p>{errors.countryId}</p>
+                    )}
+            </div>
+            <div className="div">
                 <label>Nombre:</label>
                 <input
                  type="text"
@@ -133,7 +148,7 @@ return(
 
             </div>
 
-            <div>
+            <div className="div">
                 <label>Dificultad:</label>
                 <input
                  type="number"
@@ -147,7 +162,7 @@ return(
                 
             </div>
 
-            <div>
+            <div className="div">
                 <label>Duracion:</label>
                 <input
                  type="text"
@@ -160,7 +175,7 @@ return(
                     )}
                 
             </div>
-            <div>
+            <div className="div">
             <label>Temporada:</label>
             <select name="season" value={input.season} onChange={(e)=>handleChange(e)}>
 
@@ -177,23 +192,12 @@ return(
 
             </div>
 
-            <div>
-            <label>Pais:</label>
-            <select name="countryId" value={countryId} onChange={(e)=>handleChange(e)}>
-                
-                    {countries.map((c)=>(
-                        <option key={c.name} value={c.name}>{c.name} </option>
-                    ))}
-                
-            </select>
-            {errors.countryId && (
-                        <p>{errors.countryId}</p>
-                    )}
-            </div>
+            
 
             {/* <ul><li>{input.countriesId.map(el=>el + " ,")}</li></ul> */}
             <button type="submit">Agregar actividad</button>
         </form>
+        </div>
     </div>
 )
 };

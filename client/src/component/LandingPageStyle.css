@@ -64,13 +64,20 @@ background-attachment: fixed;
   display: block;
   -webkit-appearance: none;
   border: 6px solid rgba(255,255,255,0.45);
-  border-radius: 50px;
+  border-radius: 15px;
   padding: 1em 3em;
   background-repeat: no-repeat;
   background-size: 100%;
   background-clip: padding-box;
   position: relative;
   color:black;
+
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  
+
+  
 
 
 
