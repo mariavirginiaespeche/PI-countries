@@ -6,9 +6,9 @@ import './LandingPageStyle.css'
 export default function LandingPage(){
     return(
         <div className="landing-page">
-            <h1 className="titlelanding">Bienvenidos al mundo</h1>
-            <Link to="/home">
-                <button className="buttonlanding">HOME</button>
+            <h1 className="titlelanding">BIENVENIDOS AL MUNDO</h1>
+            <Link to="/home" style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                <button className="buttonlanding">INGRESAR</button>
             </Link>
         </div>
     )

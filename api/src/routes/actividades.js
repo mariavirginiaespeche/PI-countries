@@ -2,6 +2,7 @@
 //const activityM= require("../models/Activity");
 const{ Router }=require("express");
 const { Country, Activity } = require('../db.js')
+const {Op}= require("sequelize"); 
 
 
 
@@ -89,6 +90,55 @@ router.get("/", async (req, res, next) => {
     
 //     });
 
+// router.put("/", async (req, res) => {
+//     try {
+//       const { name, dificulty, duration, season, countries } = req.body;
+//       const activity = await Activity.findOne({
+//         where: {
+//           name: {
+//             [Op.eq]: name,
+//           },
+//         },
+//       });
+//       //console.log("ACTIVIDAD", activity)
 
+//       activity.dificulty = dificulty;
+//       activity.duration = duration;
+//       activity.season = season;
+//       await activity.save();
+  
+//       let ctry;
+//       if (Array.isArray(countries)) {
+//         ctry = await Promise.all(
+//           countries.map((country) => Country.findByPk(country.id))
+//         );
+//       }
+//       if (ctry) {
+//         await activity.setCountries(ctry);
+//       }
+//       return res.send(activity);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   });
+
+
+
+//   router.delete("/:name", async (req, res, next) => {
+//     try {
+//       const { name } = req.params;
+//       const activity = await Activity.destroy({
+//         where: {
+//           name: {
+//             [Op.eq]: name,
+//           },
+//         },
+//       });
+
+//      res.json(activity)
+//     }catch(err){
+//         next(err)
+//     }
+//  })
 
     module.exports = router;

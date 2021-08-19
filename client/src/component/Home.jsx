@@ -75,8 +75,14 @@ export default function Home(){
             
             <div>
             <div className="divfilter">
-            <h1 className="h1">COUNTRIES</h1>
-            <span className="spanfilter">Ordenar alfabeticamente</span>
+            {/* <h1 className="h1">COUNTRIES</h1> */}
+            
+            
+                
+                <SearchBar/>
+                
+
+                <span className="spanfilter">Ordenar alfabeticamente</span>
                 <select className="selectfilter" onChange={e=>handleNameSort(e)}>
                     
                     <option value= "asc">Ascendente</option>
@@ -108,9 +114,7 @@ export default function Home(){
    
                     
                 </select>
-                
-                <SearchBar/>
-                <Link to= "/activity"><button className="buttoncrearact">Agregar actividades</button></Link>
+                <Link to= "/activity"><button className="buttoncrearact">Agregar una actividad</button></Link>
 
                 </div>
                 

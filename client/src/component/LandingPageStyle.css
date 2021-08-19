@@ -1,16 +1,16 @@
 .landing-page{
-background-image: url("https://wallpaperaccess.com/full/766612.jpg");
+background-image: url("https://i.pinimg.com/originals/79/e6/3f/79e63f4372b085bce16c7121210d39f9.jpg");
   
 
 
-background-attachment: fixed;
+background-attachment:initial;
 
     background-position-y: 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    height: 120%;
     opacity: 1;
-    position: absolute;
+    position:absolute;
     top: 0px;
     transition: opacity 0.3s linear 0s;
     width: 100%;
@@ -63,7 +63,7 @@ background-attachment: fixed;
     margin: 2em auto;
   display: block;
   -webkit-appearance: none;
-  border: 6px solid rgba(255,255,255,0.45);
+  border: 6px solid #aedddd;
   border-radius: 15px;
   padding: 1em 3em;
   background-repeat: no-repeat;
@@ -71,10 +71,13 @@ background-attachment: fixed;
   background-clip: padding-box;
   position: relative;
   color:black;
+  
+  font-size: 25px;
 
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
-  font-style: normal;
+  
+    background-color: white;
+
+  
   
 
   

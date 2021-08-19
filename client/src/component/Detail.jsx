@@ -18,7 +18,8 @@ export default function Detail(){
             <div className="detailbackground">
                 
                    
-                    <div className="card-detail">
+                    <div className="carddetail2">
+                        <div className="card-detail">
                         <h1>{countriesDetail?.name}</h1>
                         <h5>ID:{countriesDetail?.id}</h5>  
                         <h5>CONTINENTE:{countriesDetail?.region}</h5>
@@ -27,9 +28,9 @@ export default function Detail(){
                         <h5>AREA:{countriesDetail?.area}</h5>
                         <h5>CAPITAL:{countriesDetail?.capital}</h5>
                         <h5>POBLACION:{countriesDetail?.population}</h5>
-                    {/* </div> 
+                     {/* </div> 
 
-                    <div> */}
+                    <div className="card-detail">  */}
                         <h5>ACTIVIDADES</h5>
                         
 
@@ -44,9 +45,10 @@ export default function Detail(){
                     } ):
                         <h5> NO HAY ACTIVIDADES PARA ESTE PAIS</h5>
                     }
+                    </div>
 
                 <Link to= "/home">
-                    <button>Volver</button>
+                    <button className="buttonvolver">Volver</button>
                 </Link>
 
                     </div>

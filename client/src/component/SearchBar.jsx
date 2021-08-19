@@ -28,7 +28,7 @@ export default function SearchBar(){
         <div className="divbusqueda">
             <input  className="inputbusqueda"
             type= "text"
-            placeholder= "Buscar..."
+            placeholder= "Ingresar pais..."
             value= {name}
             onChange= {(e)=> handleInputChange(e)}
             />

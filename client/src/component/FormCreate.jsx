@@ -114,13 +114,13 @@ export default function ActivityCreate(){
 return(
     <div className="fondoform">
 
-        <Link to="/home"><button className="buttonlanding">Volver</button></Link>
+        <Link to="/home"><button className="buttonvolver">Volver</button></Link>
         <div className="divform">
-        <h1 className="h1">Crear tu actividad</h1>
+        <h1 className="h1">Define tu actividad</h1>
         <form className="form" onSubmit={(e)=>handleSubmit(e)}>
 
         <div className="div">
-            <label>Pais:</label>
+            <label>Pais: </label>
             <select name="countryId" value={countryId} onChange={(e)=>handleChange(e)}>
                 
                     {countries.map((c)=>(
@@ -133,7 +133,7 @@ return(
                     )}
             </div>
             <div className="div">
-                <label>Nombre:</label>
+                <label>Nombre: </label>
                 <input
                  type="text"
                  value={input.name}
@@ -149,7 +149,7 @@ return(
             </div>
 
             <div className="div">
-                <label>Dificultad:</label>
+                <label>Dificultad: </label>
                 <input
                  type="number"
                  value={input.dificulty}
@@ -163,7 +163,7 @@ return(
             </div>
 
             <div className="div">
-                <label>Duracion:</label>
+                <label>Duracion: </label>
                 <input
                  type="text"
                  value={input.duration}
@@ -176,7 +176,7 @@ return(
                 
             </div>
             <div className="div">
-            <label>Temporada:</label>
+            <label>Temporada: </label>
             <select name="season" value={input.season} onChange={(e)=>handleChange(e)}>
 
             <option value="summer" >Summer</option>
@@ -195,7 +195,7 @@ return(
             
 
             {/* <ul><li>{input.countriesId.map(el=>el + " ,")}</li></ul> */}
-            <button type="submit">Agregar actividad</button>
+            <button className="buttonaddact" type="submit">Agregar actividad</button>
         </form>
         </div>
     </div>
