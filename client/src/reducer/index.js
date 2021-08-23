@@ -68,19 +68,19 @@ function rootReducer(state = initialState, action) {
         case "ORDER_POPULATION":{
             let orderPopulationArray = action.payload === "asc" ?
                 state.countries.sort(function (a, b) {
-                    if (a.population > b.population) {
+                    if (Number(a.population) > Number(b.population)) {
                         return 1;
                     }
-                    if (b.population > a.population) {
+                    if (Number(b.population) > Number(a.population)) {
                         return -1;
                     }
                     return 0;
                 }) :
                 state.countries.sort(function (a, b) {
-                    if (a.population > b.population) {
+                    if (Number(a.population) > Number(b.population)) {
                         return -1;
                     }
-                    if (b.population > a.population) {
+                    if (Number(b.population) >Number(a.population)) {
                         return 1;
                     }
                     return 0;

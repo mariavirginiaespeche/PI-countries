@@ -1,5 +1,5 @@
 .detailbackground{
-    background-image: url("https://i.pinimg.com/originals/79/e6/3f/79e63f4372b085bce16c7121210d39f9.jpg");
+    background-image: url("http://s3.amazonaws.com/storage.wobiz.com/54/54733/images/Large/1624898101_0ab9c463cf6e95d173e3f96808e10719.54733.jpeg");
       
     
     
@@ -24,10 +24,10 @@
     margin: 10px;
     width: 600px;
     height: 900px;
-    background-color:#e4fbfb;
+    background-color:#F4F4F4;
     border-radius: 20px;
     position: relative;
-    border: 4px solid #aedddd;
+    border: 4px solid rgba(128, 128, 128, 0.986);
     opacity: 0.9;
 }
 

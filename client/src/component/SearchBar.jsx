@@ -26,6 +26,7 @@ export default function SearchBar(){
 
     return(
         <div className="divbusqueda">
+            
             <input  className="inputbusqueda"
             type= "text"
             placeholder= "Ingresar pais..."

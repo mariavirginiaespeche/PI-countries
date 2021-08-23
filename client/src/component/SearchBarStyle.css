@@ -1,12 +1,13 @@
 .inputbusqueda{
     border-radius: 10px;
-    border: 3px solid #aedddd;
+    border: 3px solid rgba(128, 128, 128, 0.986);
     size: 200px;
     font-size: 20px;
     height: 34px;
     font-size: 16px;
     padding-left: 50px;
     padding-right: 50px;
+    font-size: 15px;
     
 
     
@@ -16,7 +17,7 @@
     margin: 2em auto;
     display: inline-block;
   -webkit-appearance: none;
-  border: 3px solid #aedddd;
+  border: 3px solid rgba(128, 128, 128, 0.986);
   border-radius: 10px;
   padding: 10px;
   background-repeat: no-repeat;
@@ -25,5 +26,6 @@
   position: relative;
   color: black;
   background-color: white;
+  font-size: 15px;
 }
 

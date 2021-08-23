@@ -41,6 +41,7 @@ export default function Detail(){
                             <h5>Difficulty: {a.dificulty}</h5>
                             <h5>Duration: {a.duration} mins</h5>
                             <h5>Season: {a.season}</h5>
+                            
                         </div>   )
                     } ):
                         <h5> NO HAY ACTIVIDADES PARA ESTE PAIS</h5>

@@ -65,21 +65,7 @@ export default function ActivityCreate(){
         }, countryId))
     }
 
-    // function handleCheck(e){
-    //     if(e.target.checked){
-    //         setInput({
-    //             ...input,
-    //             temporada: e.target.value
-    //         })
-    //     }
-    // }
-
-    // function handleSelect(e){
-    //     setInput({
-    //         ...input,
-    //         countryId:[...input.countryId, e.target.value]
-    //     })
-    // }
+    
 
     async function handleSubmit(e){
 
@@ -106,6 +92,7 @@ export default function ActivityCreate(){
          }
     }
 
+   
 
 
 
@@ -126,6 +113,7 @@ return(
                     {countries.map((c)=>(
                         <option key={c.name} value={c.name}>{c.name} </option>
                     ))}
+
                 
             </select>
             {errors.countryId && (
@@ -197,6 +185,10 @@ return(
             {/* <ul><li>{input.countriesId.map(el=>el + " ,")}</li></ul> */}
             <button className="buttonaddact" type="submit">Agregar actividad</button>
         </form>
+
+       
+                
+                
         </div>
     </div>
 )

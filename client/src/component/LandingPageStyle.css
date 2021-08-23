@@ -1,5 +1,5 @@
 .landing-page{
-background-image: url("https://i.pinimg.com/originals/79/e6/3f/79e63f4372b085bce16c7121210d39f9.jpg");
+background-image: url("http://s3.amazonaws.com/storage.wobiz.com/54/54733/images/Large/1624898101_0ab9c463cf6e95d173e3f96808e10719.54733.jpeg");
   
 
 
@@ -16,25 +16,26 @@ background-attachment:initial;
     width: 100%;
 }
 .titlelanding{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
     
     font-size: 100px;
-    font-style: normal;
+    font-style:initial;
     line-height: 120%;
     display: block;
-    background-color: azure;
+    background-color: #f4f4f4;;
     opacity: 0.8;
     
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font-weight: bold;
+    font-weight: lighter;
     
 
     padding: 150px;
     text-align: center;
     text-transform: uppercase;
+    color: black;
 }
 
 .buttonlanding{
@@ -63,7 +64,7 @@ background-attachment:initial;
     margin: 2em auto;
   display: block;
   -webkit-appearance: none;
-  border: 6px solid #aedddd;
+  border: 6px solid rgba(128, 128, 128, 0.986);
   border-radius: 15px;
   padding: 1em 3em;
   background-repeat: no-repeat;
@@ -76,6 +77,9 @@ background-attachment:initial;
 
   
     background-color: white;
+
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-weight: lighter;
 
   
   
